@@ -34,7 +34,12 @@ public class playerMove : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * grv * -2f);
         }
 
-        velocity.y += grv * Time.deltaTime;
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+            velocity.y += grv * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 }
