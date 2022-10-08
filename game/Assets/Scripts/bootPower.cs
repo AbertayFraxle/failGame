@@ -11,18 +11,12 @@ public class bootPower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boots.SetActive(false);
+        boots.active = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void giveBoots()
-    {
-        boots.SetActive(true);
-        this.GetComponent<playerMove>().jumpHeight = this.GetComponent<playerMove>().jumpHeight * 3f;
     }
 }
