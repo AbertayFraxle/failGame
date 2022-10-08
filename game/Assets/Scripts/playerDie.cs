@@ -26,9 +26,7 @@ public class playerDie : MonoBehaviour
         if (hitObj.gameObject.layer == 6) //Death layer
         {
             Debug.Log("HIT");
-            float xRot = controller.transform.eulerAngles.x;
             float yRot = controller.transform.eulerAngles.y;
-            float zRot = controller.transform.eulerAngles.z;
             Quaternion initialRot = Quaternion.Euler(-90f, yRot, 0f);
             Instantiate(corpse, controller.transform.position, Quaternion.identity * initialRot);
 
