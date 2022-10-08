@@ -10,6 +10,9 @@ public class playerDie : MonoBehaviour
     public CharacterController controller;
     public GameObject corpse;
 
+    [SerializeField]
+    public GameObject pickupMan;
+
     private void OnTriggerEnter(Collider hitObj)
     {
         if (hitObj.gameObject.layer == 6) //Death layer
@@ -21,7 +24,6 @@ public class playerDie : MonoBehaviour
             {
                 Instantiate(corpse, controller.transform.position, Quaternion.identity * initialRot);
                 --lives;
-                
             }
             else
             {
@@ -31,6 +33,9 @@ public class playerDie : MonoBehaviour
             controller.enabled = false;
             controller.transform.position = new Vector3(1, 1, 1);
             controller.enabled = true;
+
+            this.GetComponent<bootPower>().removeBoots();
+            pickupMan.GetComponent<reloadObjects>().trigger();
         }
     }
 }

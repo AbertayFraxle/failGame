@@ -23,6 +23,12 @@ public class bootPower : MonoBehaviour
     public void giveBoots()
     {
         boots.SetActive(true);
-        this.GetComponent<playerMove>().jumpHeight = this.GetComponent<playerMove>().jumpHeight * 3f;
+        this.GetComponent<playerMove>().jumpHeight = 9f;
+    }
+
+    public void removeBoots()
+    {
+        boots.SetActive(false);
+        this.GetComponent<playerMove>().jumpHeight = 3f;
     }
 }
