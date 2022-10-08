@@ -10,6 +10,9 @@ public class playerDie : MonoBehaviour
     public CharacterController controller;
     public GameObject corpse;
 
+    [SerializeField]
+    public GameObject pickupMan;
+
     // Update is called once per frame
     /*  void Update()
       {
@@ -33,6 +36,9 @@ public class playerDie : MonoBehaviour
             controller.enabled = false;
             controller.transform.position = new Vector3(1, 1, 1);
             controller.enabled = true;
+
+            this.GetComponent<bootPower>().removeBoots();
+            pickupMan.GetComponent<reloadObjects>().trigger();
         }
     }
 }
