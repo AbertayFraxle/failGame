@@ -18,7 +18,7 @@ public class manageUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lives.text = "x" + player.GetComponent<playerDie>().lives;
+        lives.text = "x" + (player.GetComponent<playerDie>().lives+1);
 
         coins.text = player.GetComponent<coinManage>().checkCoins().ToString();
     }
