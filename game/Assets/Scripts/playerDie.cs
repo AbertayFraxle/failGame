@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +27,7 @@ public class playerDie : MonoBehaviour
                 controller.enabled = true;
 
                 this.GetComponent<bootPower>().removeBoots();
+                this.GetComponent<coinManage>().resetCoin();
                 pickupMan.GetComponent<reloadObjects>().trigger();
             }
             else
