@@ -22,6 +22,7 @@ public class playerMove : MonoBehaviour
 
     [SerializeField]
     public Animator animator;
+
     Vector3 velocity;
     bool isGrounded;
 
