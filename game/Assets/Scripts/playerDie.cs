@@ -1,25 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerDie : MonoBehaviour
 {
-    public Transform killCheck;
-    public float killDis = 1f;  //ground distance you twat
-    public LayerMask killMask;
+    public int lives = 3;
     public CharacterController controller;
     public GameObject corpse;
-
-    // Update is called once per frame
-    /*  void Update()
-      {
-           shouldDie = Physics.CheckSphere(killCheck.position, killDis, killMask);
-
-          if(shouldDie == true)
-          {
-              
-          }
-      }*/
 
     private void OnTriggerEnter(Collider hitObj)
     {
@@ -28,7 +17,16 @@ public class playerDie : MonoBehaviour
             Debug.Log("HIT");
             float yRot = controller.transform.eulerAngles.y;
             Quaternion initialRot = Quaternion.Euler(-90f, yRot, 0f);
-            Instantiate(corpse, controller.transform.position, Quaternion.identity * initialRot);
+            if (lives > 0)
+            {
+                Instantiate(corpse, controller.transform.position, Quaternion.identity * initialRot);
+                --lives;
+                
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
 
             controller.enabled = false;
             controller.transform.position = new Vector3(1, 1, 1);

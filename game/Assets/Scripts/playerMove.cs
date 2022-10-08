@@ -57,18 +57,19 @@ public class playerMove : MonoBehaviour
             animator.SetBool("Moving", false);
         }
 
+        //Jump
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * grv * -2f);
         }
 
+        //Land
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
 
-        
-
+        //Gravity
         velocity.y += grv * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
