@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class playerMove : MonoBehaviour
@@ -19,6 +20,8 @@ public class playerMove : MonoBehaviour
     public float groundDis = 0.4f;  //ground distance you twat
     public LayerMask groundMask;
 
+    [SerializeField]
+    public Animator animator;
     Vector3 velocity;
     bool isGrounded;
 
@@ -36,15 +39,21 @@ public class playerMove : MonoBehaviour
 
         Vector3 dir = new Vector3(x,0f,z).normalized;
 
-        if(dir.magnitude >= 0.1f)
+        if (dir.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y,targetAngle, ref turnSmoothVelocity, turnSmooth);
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmooth);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
             controller.Move(moveDir.normalized * spd * Time.deltaTime);
+
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
         }
 
         if(Input.GetButtonDown("Jump") && isGrounded)
@@ -56,6 +65,8 @@ public class playerMove : MonoBehaviour
         {
             velocity.y = -2f;
         }
+
+        
 
         velocity.y += grv * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
