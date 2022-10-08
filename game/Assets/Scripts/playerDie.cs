@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,21 @@ public class playerDie : MonoBehaviour
 
     [SerializeField]
     public GameObject pickupMan;
+
+    private void Update()
+    {
+        if (controller.transform.position.y < -20)
+        {
+            if (lives > 0)
+            {
+                --lives;
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider hitObj)
     {
