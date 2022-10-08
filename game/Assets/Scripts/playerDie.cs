@@ -10,6 +10,7 @@ public class playerDie : MonoBehaviour
     public int lives = 3;
     public CharacterController controller;
     public GameObject corpse;
+    public Transform spawnPoint;
 
     [SerializeField]
     public GameObject pickupMan;
@@ -21,6 +22,12 @@ public class playerDie : MonoBehaviour
             if (lives > 0)
             {
                 --lives;
+                controller.enabled = false;
+                controller.transform.position = spawnPoint.transform.position;
+                controller.enabled = true;
+
+                this.GetComponent<bootPower>().removeBoots();
+                pickupMan.GetComponent<reloadObjects>().trigger();
             }
             else
             {
@@ -33,7 +40,7 @@ public class playerDie : MonoBehaviour
     {
         if (hitObj.gameObject.layer == 6) //Death layer
         {
-            Debug.Log("HIT");
+
             float yRot = controller.transform.eulerAngles.y;
             Quaternion initialRot = Quaternion.Euler(-90f, yRot, 0f);
             if (lives > 0)
@@ -47,7 +54,7 @@ public class playerDie : MonoBehaviour
             }
 
             controller.enabled = false;
-            controller.transform.position = new Vector3(1, 1, 1);
+            controller.transform.position = spawnPoint.transform.position;
             controller.enabled = true;
 
             this.GetComponent<bootPower>().removeBoots();
