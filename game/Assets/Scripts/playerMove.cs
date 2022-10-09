@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 //using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMove : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class playerMove : MonoBehaviour
         // Update is called once per frame
         void Update()
     {
+
+        if (Input.GetButton("Cancel")){
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDis, groundMask);
 
         float x = Input.GetAxisRaw("Horizontal");
