@@ -24,7 +24,7 @@ public class setNewSpawn : MonoBehaviour
         {
             if (yPos <= 0.3)
             {
-                yPos += 0.001f * Time.deltaTime;
+                yPos += 1f * Time.deltaTime;
                 flag.transform.localPosition = new Vector3(3.35f, yPos, -0.03f);
             }
         }
