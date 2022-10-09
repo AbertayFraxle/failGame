@@ -13,6 +13,9 @@ public class Menu : MonoBehaviour
     public Canvas settings;
 
     [SerializeField]
+    public Canvas levelSelect;
+
+    [SerializeField]
     public Slider gameVolume;
 
     [SerializeField]
@@ -33,6 +36,12 @@ public class Menu : MonoBehaviour
     public void onPlayClick()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+    }
+
+    public void onSelectClick()
+    {
+        main.gameObject.SetActive(false);
+        levelSelect.gameObject.SetActive(true);
     }
 
     public void onSettingsClick()
@@ -69,5 +78,6 @@ public class Menu : MonoBehaviour
     {
         main.gameObject.SetActive(true);
         settings.gameObject.SetActive(false);
+        levelSelect.gameObject.SetActive(false);
     }
 }

@@ -32,6 +32,7 @@ public class playerMove : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        PlayerPrefs.SetInt("unlocked" ,SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnTriggerEnter(Collider jumpPad)
