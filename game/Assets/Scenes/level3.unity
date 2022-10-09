@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 8d792fe484e35ed4692e083c219ced48, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: e3b885cf8edacd042816758eee8a1ae2, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -743,15 +743,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386585029334743461, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.062324412
+      value: 0.062324416
       objectReference: {fileID: 0}
     - target: {fileID: 386585029334743461, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000027326181
+      value: 0.000000008751377
       objectReference: {fileID: 0}
     - target: {fileID: 386585029334743461, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.7064058e-10
+      value: -5.464869e-10
       objectReference: {fileID: 0}
     - target: {fileID: 386585029903191460, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -767,15 +767,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386585029903191460, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09853762
+      value: 0.098537646
       objectReference: {fileID: 0}
     - target: {fileID: 386585029903191460, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -7.352745e-15
+      value: 0.00000003057002
       objectReference: {fileID: 0}
     - target: {fileID: 386585029903191460, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 6.667229e-16
+      value: -0.0000000030270295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
