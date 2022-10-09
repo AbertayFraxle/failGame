@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3242580302877255004}
   m_LocalRotation: {x: 0.080420345, y: -0, z: -0, w: 0.996761}
-  m_LocalPosition: {x: 0, y: 3, z: -15}
+  m_LocalPosition: {x: -0.086173296, y: 3, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -258,7 +258,7 @@ Transform:
   - {fileID: 3242580302877255001}
   - {fileID: 3242580304166147205}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &3242580303751910236
 CharacterController:
@@ -337,6 +337,7 @@ MonoBehaviour:
   lives: 3
   controller: {fileID: 3242580303751910236}
   corpse: {fileID: 0}
+  spawnPoint: {fileID: 0}
   pickupMan: {fileID: 0}
 --- !u!114 &3356927577839227406
 MonoBehaviour:
@@ -873,7 +874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3242580304166147210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.58, z: 0}
+  m_LocalPosition: {x: -0.086173296, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1024,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 045b838de40505d4db50e677e5b36e46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08917332
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 045b838de40505d4db50e677e5b36e46, type: 3}
       propertyPath: m_LocalPosition.y
