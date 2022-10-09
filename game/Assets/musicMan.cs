@@ -11,7 +11,14 @@ public class musicMan : MonoBehaviour
         DontDestroyOnLoad(transform.gameObject);
         audioS = GetComponent<AudioSource>();
 
-        PlayMusic();
+        if (GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().isPlaying)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            PlayMusic();
+        }
     }
 
     public void PlayMusic()

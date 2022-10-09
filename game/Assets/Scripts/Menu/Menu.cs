@@ -24,6 +24,9 @@ public class Menu : MonoBehaviour
     [SerializeField]
     public Slider sensitivity;
 
+    [SerializeField]
+    public Transform buttonman; 
+
     private void Start()
     {
         LoadMenu();
@@ -42,6 +45,7 @@ public class Menu : MonoBehaviour
     {
         main.gameObject.SetActive(false);
         levelSelect.gameObject.SetActive(true);
+        buttonman.GetComponent<getButton>().buttonUnlock();
     }
 
     public void onSettingsClick()

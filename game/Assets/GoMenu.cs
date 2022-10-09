@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 public class GoMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-   public void go()
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void go()
     {
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
