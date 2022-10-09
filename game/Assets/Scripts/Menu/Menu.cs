@@ -25,7 +25,7 @@ public class Menu : MonoBehaviour
     {
         LoadMenu();
 
-        gameVolume.value = PlayerPrefs.GetFloat("gameVolume", 1);
+        gameVolume.value = 0;
         musicVolume.value = PlayerPrefs.GetFloat("musicVolume", 1);
         sensitivity.value = PlayerPrefs.GetFloat("sensitivity", 0.5f);
     }
@@ -48,7 +48,8 @@ public class Menu : MonoBehaviour
 
     public void onGVolumeChange()
     {
-        PlayerPrefs.SetFloat("gameVolume", gameVolume.value);
+        //PlayerPrefs.SetFloat("gameVolume", gameVolume.value);
+        gameVolume.value = 0;
     }
 
     public void onMVolumeChange()
