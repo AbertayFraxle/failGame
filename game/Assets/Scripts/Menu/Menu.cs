@@ -24,6 +24,10 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         LoadMenu();
+
+        gameVolume.value = PlayerPrefs.GetFloat("gameVolume", 1);
+        musicVolume.value = PlayerPrefs.GetFloat("musicVolume", 1);
+        sensitivity.value = PlayerPrefs.GetFloat("sensitivity", 0.5f);
     }
 
     public void onPlayClick()
@@ -49,7 +53,10 @@ public class Menu : MonoBehaviour
 
     public void onMVolumeChange()
     {
+
         PlayerPrefs.SetFloat("musicVolume", musicVolume.value);
+
+        GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().volume = musicVolume.value;
     }
 
     public void onSensChange()
