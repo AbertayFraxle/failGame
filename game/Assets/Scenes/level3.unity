@@ -738,15 +738,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 386585029334743461, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.062324416
+      value: 0.062324412
       objectReference: {fileID: 0}
     - target: {fileID: 386585029334743461, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008751377
+      value: -0.0000000027326181
       objectReference: {fileID: 0}
     - target: {fileID: 386585029334743461, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -5.464869e-10
+      value: 1.7064058e-10
       objectReference: {fileID: 0}
     - target: {fileID: 386585029903191460, guid: a2e424ec82a231d4daca80259f90de31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1131,6 +1131,10 @@ PrefabInstance:
     - target: {fileID: 3242580303751910239, guid: 5a84943ca335f5a46b4fd3fe148fcc2d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356927577839227393, guid: 5a84943ca335f5a46b4fd3fe148fcc2d, type: 3}
+      propertyPath: lives
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3356927577839227393, guid: 5a84943ca335f5a46b4fd3fe148fcc2d, type: 3}
       propertyPath: corpse
